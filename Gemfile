@@ -1,40 +1,78 @@
+ruby '2.1.2'
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'rails', '~> 4.1'
+gem 'pg'
+gem 'puma'
 
-# Use jquery as the JavaScript library
+# Core
+gem 'breadcrumbs_on_rails'
+gem 'browser'
+gem 'high_voltage'
+gem 'httparty'
+gem 'kaminari'
+gem 'redcarpet'
+gem 'simple_form'
+gem 'slim-rails'
+gem 'nokogiri', '~> 1.6.1.0'
+
+# CSS
+# gem 'base45', '~> 0.9.0', git: 'https://b9fa16a939f3fcc54b834d757fa5db0dd3751e0b:x-oauth-basic@github.com/platform45/base45.git'
+gem 'bourbon', '>= 4.0.1'
+gem 'neat', '>= 1.6.0'
+gem 'flexslider'
+gem 'sass-rails', github: 'rails/sass-rails' # Use sass-rails master until Sass 3.3 is supported: https://github.com/rails/sass-rails/pull/192
+
+# JavaScript
+gem 'coffee-rails'
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'jquery-ui-rails'
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'uglifier'
+
+# File uploading
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
+
+# Assets
+gem 'font-awesome-rails'
+
+# Mailers
+
+# Misc
+gem 'foreman'
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :development, :test do
+  gem 'guard-rails'
+  gem 'pry', '~> 0.9.12'
+  gem 'pry-rails'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'factory_girl_rails'
+  gem 'rspec-html-matchers'
+  gem 'rspec-rails', '~> 2.99.0'
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', require: false
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'webmock'
+  gem 'sinatra'
+  gem 'rack-ssl'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
+group :production do
+  gem 'rails_12factor'
+end
