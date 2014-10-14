@@ -16,12 +16,12 @@ gem 'kaminari'
 gem 'redcarpet'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'nokogiri', '~> 1.6.1.0'
+gem 'nokogiri'
 
 # CSS
 # gem 'base45', '~> 0.9.0', git: 'https://b9fa16a939f3fcc54b834d757fa5db0dd3751e0b:x-oauth-basic@github.com/platform45/base45.git'
-gem 'bourbon', '>= 4.0.1'
-gem 'neat', '>= 1.6.0'
+gem 'bourbon'
+gem 'neat'
 gem 'flexslider'
 gem 'sass-rails', github: 'rails/sass-rails' # Use sass-rails master until Sass 3.3 is supported: https://github.com/rails/sass-rails/pull/192
 
@@ -53,7 +53,7 @@ end
 
 group :development, :test do
   gem 'guard-rails'
-  gem 'pry', '~> 0.9.12'
+  gem 'pry'
   gem 'pry-rails'
 end
 
@@ -63,7 +63,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'rspec-html-matchers'
-  gem 'rspec-rails', '~> 2.99.0'
+  gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
   gem 'database_cleaner'

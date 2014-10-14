@@ -51,7 +51,7 @@ GEM
     breadcrumbs_on_rails (2.3.0)
     browser (0.7.0)
     builder (3.2.2)
-    capybara (2.4.3)
+    capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
@@ -68,7 +68,7 @@ GEM
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
-    coffee-rails (4.0.1)
+    coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
     coffee-script (2.3.0)
@@ -81,9 +81,9 @@ GEM
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dotenv (1.0.1)
-    dotenv-rails (1.0.1)
-      dotenv (= 1.0.1)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     excon (0.40.0)
     execjs (2.2.1)
@@ -94,13 +94,15 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
-    ffi (1.9.5)
+    ffi (1.9.6)
     flexslider (2.2.0)
       sass-rails (>= 3.1.0)
-    fog (1.23.0)
+    fog (1.24.0)
       fog-brightbox
       fog-core (~> 1.23)
       fog-json
+      fog-radosgw (>= 0.0.2)
+      fog-sakuracloud (>= 0.0.4)
       fog-softlayer
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
@@ -117,9 +119,19 @@ GEM
       net-ssh (>= 2.1.3)
     fog-json (1.0.0)
       multi_json (~> 1.0)
+    fog-radosgw (0.0.3)
+      fog-core (>= 1.21.0)
+      fog-json
+      fog-xml (>= 0.0.1)
+    fog-sakuracloud (0.1.1)
+      fog-core
+      fog-json
     fog-softlayer (0.3.20)
       fog-core
       fog-json
+    fog-xml (0.1.0)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     foreman (0.63.0)
@@ -149,7 +161,7 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (5.0.0)
+    jquery-ui-rails (5.0.1)
       railties (>= 3.2.16)
     json (1.8.1)
     kaminari (0.16.1)
@@ -168,7 +180,7 @@ GEM
     mime-types (2.4.1)
     mini_magick (3.8.1)
       subexec (~> 0.2.1)
-    mini_portile (0.5.3)
+    mini_portile (0.6.0)
     minitest (5.4.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
@@ -178,12 +190,12 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.3.1)
+      mini_portile (= 0.6.0)
     pg (0.17.1)
-    pry (0.9.12.6)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
@@ -220,29 +232,30 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (3.1.2)
-    rspec (2.99.0)
-      rspec-core (~> 2.99.0)
-      rspec-expectations (~> 2.99.0)
-      rspec-mocks (~> 2.99.0)
-    rspec-collection_matchers (1.0.0)
-      rspec-expectations (>= 2.99.0.beta1)
-    rspec-core (2.99.0)
-    rspec-expectations (2.99.2)
-      diff-lcs (>= 1.1.3, < 2.0)
-    rspec-html-matchers (0.5.0)
+    redcarpet (3.2.0)
+    rspec (3.1.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+    rspec-core (3.1.7)
+      rspec-support (~> 3.1.0)
+    rspec-expectations (3.1.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.1.0)
+    rspec-html-matchers (0.6.1)
       nokogiri (~> 1)
-      rspec (~> 2, >= 2.11.0)
-    rspec-mocks (2.99.2)
-    rspec-rails (2.99.0)
+      rspec (~> 3)
+    rspec-mocks (3.1.3)
+      rspec-support (~> 3.1.0)
+    rspec-rails (3.1.0)
       actionpack (>= 3.0)
-      activemodel (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-collection_matchers
-      rspec-core (~> 2.99.0)
-      rspec-expectations (~> 2.99.0)
-      rspec-mocks (~> 2.99.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+      rspec-support (~> 3.1.0)
+    rspec-support (3.1.2)
     safe_yaml (1.0.4)
     sass (3.4.5)
     shoulda-matchers (2.7.0)
@@ -273,10 +286,10 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.4)
+    sprockets-rails (2.2.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
-      sprockets (~> 2.8)
+      sprockets (>= 2.8, < 4.0)
     subexec (0.2.3)
     temple (0.6.8)
     thor (0.19.1)
@@ -303,7 +316,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bourbon (>= 4.0.1)
+  bourbon
   breadcrumbs_on_rails
   browser
   capybara
@@ -327,10 +340,10 @@ DEPENDENCIES
   kaminari
   launchy
   mini_magick
-  neat (>= 1.6.0)
-  nokogiri (~> 1.6.1.0)
+  neat
+  nokogiri
   pg
-  pry (~> 0.9.12)
+  pry
   pry-rails
   puma
   rack-ssl
@@ -338,7 +351,7 @@ DEPENDENCIES
   rails_12factor
   redcarpet
   rspec-html-matchers
-  rspec-rails (~> 2.99.0)
+  rspec-rails
   sass-rails!
   shoulda-matchers
   simple_form
