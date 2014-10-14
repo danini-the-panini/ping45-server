@@ -1,0 +1,2 @@
+class ComputersControllerController < ApplicationController
+end
