@@ -5,4 +5,8 @@ FactoryGirl.define do
     user
     location
   end
+
+  factory :online_computer, parent: :computer do
+    online true
+  end
 end
