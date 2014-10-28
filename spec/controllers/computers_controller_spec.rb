@@ -31,6 +31,31 @@ describe ComputersController do
         expect(computer.online).to be
       end
     end
+  end
 
+  describe "POST /create" do
+    context "when a user exists" do
+      let!(:user) { create :user }
+      it "uses the existing user" do
+        expect{
+          post :create, user: user.name, mac_address: Faker::Internet.mac_address
+          user.reload
+        }.to change(User, :count).by(0).and change(user.computers, :count).by(1)
+      end
+    end
+
+    context "when the user does not exist" do
+      it "creates a new user" do
+        expect{
+          post :create, user: "No Such Name", mac_address: Faker::Internet.mac_address
+        }.to change(User, :count).by(1)
+      end
+    end
+
+    it "creates a computer" do
+      expect{
+        post :create, user: "No Such Name", mac_address: Faker::Internet.mac_address
+      }.to change(Computer, :count).by(1)
+    end
   end
 end
